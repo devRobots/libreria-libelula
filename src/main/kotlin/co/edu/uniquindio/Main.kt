@@ -1,5 +1,6 @@
 package co.edu.uniquindio
 
+import co.edu.uniquindio.dao.PaisDAO
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
@@ -34,6 +35,10 @@ class Main : Application() {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
+            var result: Boolean = true
+            result = PaisDAO().generarTabla()
+            result = PaisDAO().generarTabla()
+
             launch(Main::class.java)
         }
     }
