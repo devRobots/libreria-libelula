@@ -20,7 +20,7 @@ class CiudadDAO : IDao<Ciudad>() {
         }
     }
 
-    override fun buscar(id: String): Ciudad? {
+    override fun buscar(id: Int): Ciudad? {
         TODO("Not yet implemented")
     }
 
@@ -28,7 +28,7 @@ class CiudadDAO : IDao<Ciudad>() {
         TODO("Not yet implemented")
     }
 
-    override fun eliminar(id: String): Boolean {
+    override fun eliminar(id: Int): Boolean {
         TODO("Not yet implemented")
     }
 

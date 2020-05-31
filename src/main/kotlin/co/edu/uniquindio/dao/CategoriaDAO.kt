@@ -17,7 +17,7 @@ class CategoriaDAO: IDao<Categoria>() {
         }
     }
 
-    override fun buscar(id: String): Categoria? {
+    override fun buscar(id: Int): Categoria? {
         TODO("Not yet implemented")
     }
 
@@ -25,7 +25,7 @@ class CategoriaDAO: IDao<Categoria>() {
         TODO("Not yet implemented")
     }
 
-    override fun eliminar(id: String): Boolean {
+    override fun eliminar(id: Int): Boolean {
         TODO("Not yet implemented")
     }
 

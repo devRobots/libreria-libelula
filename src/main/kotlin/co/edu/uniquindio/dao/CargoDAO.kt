@@ -17,7 +17,7 @@ class CargoDAO: IDao<Cargo>() {
         }
     }
 
-    override fun buscar(id: String): Cargo? {
+    override fun buscar(id: Int): Cargo? {
         TODO("Not yet implemented")
     }
 
@@ -25,7 +25,7 @@ class CargoDAO: IDao<Cargo>() {
         TODO("Not yet implemented")
     }
 
-    override fun eliminar(id: String): Boolean {
+    override fun eliminar(id: Int): Boolean {
         TODO("Not yet implemented")
     }
 

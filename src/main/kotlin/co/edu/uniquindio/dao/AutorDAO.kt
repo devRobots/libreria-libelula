@@ -22,7 +22,7 @@ class AutorDAO: IDao<Autor>() {
         }
     }
 
-    override fun buscar(id: String): Autor? {
+    override fun buscar(id: Int): Autor? {
         TODO("Not yet implemented")
     }
 
@@ -30,7 +30,7 @@ class AutorDAO: IDao<Autor>() {
         TODO("Not yet implemented")
     }
 
-    override fun eliminar(id: String): Boolean {
+    override fun eliminar(id: Int): Boolean {
         TODO("Not yet implemented")
     }
 

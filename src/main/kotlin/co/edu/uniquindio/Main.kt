@@ -42,7 +42,10 @@ class Main : Application() {
             LibroCategoriaDAO().generarTabla()
             LibroVentaDAO().generarTabla()
 
-            print(PaisDAO().insertar(Pais("Colombia")))
+            for (i in 3..8) {
+                println(PaisDAO().eliminar(i))
+            }
+            println(PaisDAO().listar())
             exitProcess(0)
             //launch(Main::class.java)
         }

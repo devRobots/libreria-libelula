@@ -27,8 +27,8 @@ interface ICrudSQL {
     @Throws(SQLException::class)
     fun consultarFilas(
         sentencia: String,
-        parametros: List<Any?>,
-        propiedades: List<String>
+        propiedades: List<String>,
+        parametros: List<Any?>
     ): Map<String, List<Any?>>
 
     /**

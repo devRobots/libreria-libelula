@@ -39,8 +39,8 @@ class SQLConnector : ICrudSQL {
     @Throws(SQLException::class)
     override fun consultarFilas(
         sentencia: String,
-        parametros: List<Any?>,
-        propiedades: List<String>
+        propiedades: List<String>,
+        parametros: List<Any?>
     ): Map<String, List<Any?>> {
         abrirConexion()
 
@@ -155,8 +155,9 @@ class SQLConnector : ICrudSQL {
 
     @Throws(SQLException::class)
     override fun eliminar(sentencia: String, parametros: List<Any?>): Boolean {
+        abrirConexion()
+
         return if (conexion != null) {
-            abrirConexion()
             val cs = conexion!!.prepareCall(sentencia)
             for (i in parametros.indices) {
                 cs.setString(i + 1, if (parametros[i] != null) parametros[i].toString() else null)

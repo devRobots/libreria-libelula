@@ -20,7 +20,7 @@ class PersonaDAO: IDao<Persona>() {
         }
     }
 
-    override fun buscar(id: String): Persona? {
+    override fun buscar(id: Int): Persona? {
         TODO("Not yet implemented")
     }
 
@@ -28,7 +28,7 @@ class PersonaDAO: IDao<Persona>() {
         TODO("Not yet implemented")
     }
 
-    override fun eliminar(id: String): Boolean {
+    override fun eliminar(id: Int): Boolean {
         TODO("Not yet implemented")
     }
 

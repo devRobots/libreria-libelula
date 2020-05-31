@@ -16,7 +16,7 @@ abstract class IDao<T> {
      * @param id El id del ojeto T
      * @return T el objeto hallado, null en caso contrario
      */
-    abstract fun buscar(id: String): T?
+    abstract fun buscar(id: Int): T?
 
     /**
      * Metodo para listar todos los objetos T de un a tabla
@@ -31,7 +31,7 @@ abstract class IDao<T> {
      * @param id El id del objeto que se desea eliminar
      * @return Boolean true si se elimino, false en caso contrario
      */
-    abstract fun eliminar(id: String): Boolean
+    abstract fun eliminar(id: Int): Boolean
 
     /**
      * Metodo para modificar un objeto T de la tabla

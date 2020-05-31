@@ -1,6 +1,7 @@
 package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Pais
+import kotlin.collections.ArrayList
 
 class PaisDAO : IDao<Pais>() {
     override fun generarTabla(): Boolean {
@@ -17,16 +18,31 @@ class PaisDAO : IDao<Pais>() {
         }
     }
 
-    override fun buscar(id: String): Pais? {
+    override fun buscar(id: Int): Pais? {
         return null
     }
 
     override fun listar(): List<Pais> {
-        return emptyList()
+        val propiedades = arrayListOf(
+            "id", "nombre"
+        )
+        val listado = sqlConnector.consultarFilas("SELECT * FROM Pais;", propiedades, emptyList())
+
+        val salida = ArrayList<Pais>()
+        for (pais in listado) {
+            val id = pais.value[0] as Int
+            val nombre = pais.value[1] as String
+
+            salida.add(Pais(id, nombre))
+        }
+
+        return salida
     }
 
-    override fun eliminar(id: String): Boolean {
-        return false
+    override fun eliminar(id: Int): Boolean {
+        return sqlConnector.eliminar(
+            "DELETE FROM Pais WHERE id = ?", arrayListOf(id)
+        )
     }
 
     override fun actualizar(nuevaEntidad: Pais): Boolean {

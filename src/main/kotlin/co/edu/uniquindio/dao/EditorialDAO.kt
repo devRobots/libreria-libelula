@@ -21,7 +21,7 @@ class EditorialDAO: IDao<Editorial>() {
         }
     }
 
-    override fun buscar(id: String): Editorial? {
+    override fun buscar(id: Int): Editorial? {
         TODO("Not yet implemented")
     }
 
@@ -29,7 +29,7 @@ class EditorialDAO: IDao<Editorial>() {
         TODO("Not yet implemented")
     }
 
-    override fun eliminar(id: String): Boolean {
+    override fun eliminar(id: Int): Boolean {
         TODO("Not yet implemented")
     }
 

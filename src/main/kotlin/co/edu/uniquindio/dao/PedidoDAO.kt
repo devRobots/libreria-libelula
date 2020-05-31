@@ -23,7 +23,7 @@ class PedidoDAO: IDao<Pedido>() {
         }
     }
 
-    override fun buscar(id: String): Pedido? {
+    override fun buscar(id: Int): Pedido? {
         TODO("Not yet implemented")
     }
 
@@ -31,7 +31,7 @@ class PedidoDAO: IDao<Pedido>() {
         TODO("Not yet implemented")
     }
 
-    override fun eliminar(id: String): Boolean {
+    override fun eliminar(id: Int): Boolean {
         TODO("Not yet implemented")
     }
 

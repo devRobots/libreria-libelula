@@ -24,7 +24,7 @@ class LibroVentaDAO : IDao<Map<Libro, Venta>>() {
         }
     }
 
-    override fun buscar(id: String): Map<Libro, Venta>? {
+    override fun buscar(id: Int): Map<Libro, Venta>? {
         TODO("Not yet implemented")
     }
 
@@ -32,7 +32,7 @@ class LibroVentaDAO : IDao<Map<Libro, Venta>>() {
         TODO("Not yet implemented")
     }
 
-    override fun eliminar(id: String): Boolean {
+    override fun eliminar(id: Int): Boolean {
         TODO("Not yet implemented")
     }
 
