@@ -1,3 +1,14 @@
 
 .idea/dictionaries/devrobot.xml
 .idea/inspectionProfiles/Project_Default.xml
+/target/*
+target/classes/co/edu/uniquindio/Main$Companion.class
+target/classes/co/edu/uniquindio/Main.class
+target/classes/co/edu/uniquindio/dao/IDao.class
+target/classes/co/edu/uniquindio/dao/PaisDAO.class
+target/classes/co/edu/uniquindio/modelo/Categoria.class
+target/classes/co/edu/uniquindio/modelo/Editorial.class
+target/classes/co/edu/uniquindio/modelo/Pais.class
+target/classes/co/edu/uniquindio/modelo/Persona.class
+target/classes/co/edu/uniquindio/modelo/Proveedor.class
+target/classes/co/edu/uniquindio/sql/SQLConnector.class

@@ -1,7 +1,7 @@
 package co.edu.uniquindio.modelo
 
 class Editorial(
-    val codigo: Int,
+    val id: Int,
     val nombre: String,
     val correo: String,
     val ciudad: Ciudad,

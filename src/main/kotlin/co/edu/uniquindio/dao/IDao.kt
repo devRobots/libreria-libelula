@@ -3,8 +3,6 @@ package co.edu.uniquindio.dao
 import co.edu.uniquindio.sql.SQLConnector
 
 abstract class IDao<T> {
-    protected var nombre: String? = null
-    protected var propiedades: List<String>? = null
     protected val sqlConnector: SQLConnector = SQLConnector()
 
     /**
@@ -54,53 +52,18 @@ abstract class IDao<T> {
     /**
      * Metodo que construye la sentencia SQL de la insercion y la procesa
      *
-     * @param parametros Los parametros que va a tener la tabla a generar
-     * @return Boolean true si se creo la tabla exitosamente, false en caso contrario
-     */
-    protected fun generarTabla(parametros: List<String>): Boolean {
-        var sentencia = "CREATE TABLE $nombre ("
-        for (i in parametros.indices) {
-            sentencia += propiedades!![i] + " " + parametros[i]
-            sentencia += if (i < parametros.size - 1) "," else " )"
-        }
-        return try {
-            sqlConnector.generarTabla(sentencia)
-        } catch (e: Exception) {
-            false
-        }
-    }
-
-    /**
-     * Metodo que busca un objeto determinado
-     *
-     * @param tabla La tabla en la que se quiere buscar
-     * @param parametros Los parametros que se quieren usar en la busqueda
-     * @return Map<String></String>, Object> una representacion del objeto en formato Map
-     */
-    protected fun buscar(
-        tabla: String,
-        parametros: List<String?>
-    ): Map<String, Any?>? {
-        return try {
-            val sentencia = "SELECT * FROM $tabla WHERE "
-            sqlConnector.consultarFila(sentencia, parametros, propiedades!!)
-        } catch (ex: Exception) {
-            null
-        }
-    }
-
-    /**
-     * Metodo que construye la sentencia SQL de la insercion y la procesa
-     *
      * @param tabla La tabla en la que se quiere insertar
      * @param parametros Los parametros que va a tener la fila a insertar
      * @return Boolean true si se inserto exitosamente, false en caso contrario
      */
-    protected fun insertar(tabla: String, parametros: List<String?>): Boolean {
-        var sentencia = "INSERT INTO $tabla"
-        sentencia += "VALUES ( "
+    protected fun insertar(tabla: String, propiedades: List<String>, parametros: List<String>): Boolean {
+        var sentencia = "INSERT INTO $tabla ("
+        for (i in propiedades.indices) {
+            sentencia += propiedades[i] + if (i < parametros.size - 1) ", " else ")"
+        }
+        sentencia += "VALUES ("
         for (i in parametros.indices) {
-            sentencia += if (i < parametros.size - 2) "?, " else ')'
+            sentencia += "?" + if (i < parametros.size - 1) ", " else ")"
         }
         return try {
             sqlConnector.insertar(sentencia, parametros)

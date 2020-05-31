@@ -3,20 +3,18 @@ package co.edu.uniquindio.dao
 import co.edu.uniquindio.modelo.Pais
 
 class PaisDAO : IDao<Pais>() {
-    init {
-        this.nombre = "Pais"
-        propiedades = arrayListOf(
-            "id", "nombre"
-        )
-    }
-
     override fun generarTabla(): Boolean {
-        val parametros = arrayListOf(
-            "INTEGER NOT NULL",
-            "VARCHAR(50) NOT NULL"
-        )
-
-        return generarTabla(parametros)
+        return try {
+            sqlConnector.generarTabla(
+                "CREATE TABLE Pais (" +
+                        "id INTEGER NOT NULL AUTO_INCREMENT," +
+                        "nombre VARCHAR(50) NOT NULL," +
+                        "Constraint pk_pais Primary Key (id)" +
+                        ")"
+            )
+        } catch (ex: Exception) {
+            false
+        }
     }
 
     override fun buscar(id: String): Pais? {
@@ -36,6 +34,12 @@ class PaisDAO : IDao<Pais>() {
     }
 
     override fun insertar(entidad: Pais): Boolean {
-        return false
+        val propiedades = arrayListOf(
+            "nombre"
+        )
+        val parametros = arrayListOf(
+            entidad.nombre
+        )
+        return insertar("Pais", propiedades, parametros)
     }
 }

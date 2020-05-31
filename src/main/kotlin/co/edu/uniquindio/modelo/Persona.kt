@@ -4,7 +4,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 open class Persona(
-    protected val id: Int,
+    protected val cedula: Int,
     protected val nombre: String,
     protected val direccion: String?,
     protected val correo: String,

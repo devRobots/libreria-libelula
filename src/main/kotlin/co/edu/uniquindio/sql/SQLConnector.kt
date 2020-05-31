@@ -4,7 +4,7 @@ import java.sql.*
 import java.util.*
 import kotlin.collections.HashMap
 
-class SQLConnector() : ICrudSQL {
+class SQLConnector : ICrudSQL {
     private var conexion: Connection? = null
     private val props: Properties = Properties()
 
@@ -42,14 +42,14 @@ class SQLConnector() : ICrudSQL {
         parametros: List<Any?>,
         propiedades: List<String>
     ): Map<String, List<Any?>> {
+        abrirConexion()
+
         return if (conexion != null) {
             val rs: ResultSet
             val ps: PreparedStatement
             val result: MutableMap<String, List<Any>> = HashMap()
 
             try {
-                abrirConexion()
-
                 ps = conexion!!.prepareStatement(sentencia)
                 for (i in parametros.indices) {
                     ps.setString(i + 1, if (parametros[i] != null) parametros[i].toString() else null)
@@ -137,8 +137,9 @@ class SQLConnector() : ICrudSQL {
 
     @Throws(SQLException::class)
     override fun insertar(sentencia: String, parametros: List<Any?>): Boolean {
-        return if (conexion != null) {
-            abrirConexion()
+        abrirConexion()
+
+        if (conexion != null) {
             val cs = conexion!!.prepareCall(sentencia)
             for (i in parametros.indices) {
                 cs.setString(i + 1, if (parametros[i] != null) parametros[i].toString() else null)
@@ -146,7 +147,7 @@ class SQLConnector() : ICrudSQL {
             cs.execute()
             cs.close()
             cerrarConexion()
-            true
+            return true
         } else {
             throw SQLException("No existe conexion con la BD.")
         }

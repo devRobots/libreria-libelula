@@ -1,11 +1,13 @@
 package co.edu.uniquindio
 
-import co.edu.uniquindio.dao.PaisDAO
+import co.edu.uniquindio.dao.*
+import co.edu.uniquindio.modelo.Pais
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.stage.Stage
+import kotlin.system.exitProcess
 
 class Main : Application() {
 
@@ -24,7 +26,7 @@ class Main : Application() {
         primaryStage?.title = "Libreria Libelula"
 
         primaryStage?.minHeight = 400.0
-        primaryStage?.minWidth  = 600.0
+        primaryStage?.minWidth = 600.0
 
         primaryStage?.show()
     }
@@ -35,11 +37,14 @@ class Main : Application() {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            var result: Boolean = true
-            result = PaisDAO().generarTabla()
-            result = PaisDAO().generarTabla()
+            LibroPedidoDAO().generarTabla()
+            LibroProveedorDAO().generarTabla()
+            LibroCategoriaDAO().generarTabla()
+            LibroVentaDAO().generarTabla()
 
-            launch(Main::class.java)
+            print(PaisDAO().insertar(Pais("Colombia")))
+            exitProcess(0)
+            //launch(Main::class.java)
         }
     }
 }

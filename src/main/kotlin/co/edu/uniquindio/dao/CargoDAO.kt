@@ -1,18 +1,15 @@
 package co.edu.uniquindio.dao
 
-import co.edu.uniquindio.modelo.Ciudad
+import co.edu.uniquindio.modelo.Cargo
 
-class CiudadDAO : IDao<Ciudad>() {
+class CargoDAO: IDao<Cargo>() {
     override fun generarTabla(): Boolean {
-        PaisDAO().generarTabla()
         return try {
             sqlConnector.generarTabla(
-                "CREATE TABLE Ciudad (" +
+                "CREATE TABLE Cargo (" +
                         "id INTEGER NOT NULL AUTO_INCREMENT," +
                         "nombre VARCHAR(50) NOT NULL," +
-                        "pais INTEGER NOT NULL," +
-                        "Constraint pk_ciudad Primary Key (id)," +
-                        "Constraint fk_ciudad_nacionalidad Foreign Key (pais) references Pais (id)" +
+                        "Constraint pk_cargo Primary Key (id)" +
                         ")"
             )
         } catch (ex: Exception) {
@@ -20,11 +17,11 @@ class CiudadDAO : IDao<Ciudad>() {
         }
     }
 
-    override fun buscar(id: String): Ciudad? {
+    override fun buscar(id: String): Cargo? {
         TODO("Not yet implemented")
     }
 
-    override fun listar(): List<Ciudad>? {
+    override fun listar(): List<Cargo>? {
         TODO("Not yet implemented")
     }
 
@@ -32,11 +29,12 @@ class CiudadDAO : IDao<Ciudad>() {
         TODO("Not yet implemented")
     }
 
-    override fun actualizar(nuevaEntidad: Ciudad): Boolean {
+    override fun actualizar(nuevaEntidad: Cargo): Boolean {
         TODO("Not yet implemented")
     }
 
-    override fun insertar(entidad: Ciudad): Boolean {
+    override fun insertar(entidad: Cargo): Boolean {
         TODO("Not yet implemented")
     }
+
 }
