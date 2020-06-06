@@ -23,26 +23,38 @@ class PaisDAO : IDao<Pais>() {
     }
 
     override fun listar(): List<Pais> {
-        val propiedades = arrayListOf(
-            "id", "nombre"
-        )
-        val listado = sqlConnector.consultarFilas("SELECT * FROM Pais;", propiedades, emptyList())
+        return try {
+            val propiedades = arrayListOf(
+                "id", "nombre"
+            )
+            val listado = sqlConnector.consultarFilas(
+                "SELECT * FROM Pais;",
+                propiedades,
+                emptyList<Any?>()
+            )
 
-        val salida = ArrayList<Pais>()
-        for (pais in listado) {
-            val id = pais.value[0] as Int
-            val nombre = pais.value[1] as String
+            val salida = ArrayList<Pais>()
+            for (pais in listado) {
+                val id = pais.value[0] as Int
+                val nombre = pais.value[1] as String
 
-            salida.add(Pais(id, nombre))
+                salida.add(Pais(id, nombre))
+            }
+
+            salida
+        } catch (ex: Exception) {
+            emptyList()
         }
-
-        return salida
     }
 
     override fun eliminar(id: Int): Boolean {
-        return sqlConnector.eliminar(
-            "DELETE FROM Pais WHERE id = ?", arrayListOf(id)
-        )
+        return try {
+            sqlConnector.eliminar(
+                "DELETE FROM Pais WHERE id = ?", arrayListOf(id)
+            )
+        } catch (ex: Exception) {
+            false
+        }
     }
 
     override fun actualizar(nuevaEntidad: Pais): Boolean {

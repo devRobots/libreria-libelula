@@ -10,7 +10,7 @@ class LibroCategoriaDAO: IDao<Map<Libro, Categoria>>() {
         return try {
             sqlConnector.generarTabla(
                 "CREATE TABLE Libro_Categoria (" +
-                        "libro INTEGER NOT NULL AUTO_INCREMENT," +
+                        "libro INTEGER NOT NULL," +
                         "categoria INTEGER NOT NULL," +
                         "Constraint pk_libro_categoria Primary Key (libro, categoria)," +
                         "Constraint fk_libro_categoria_libro Foreign Key (libro) references Libro (id)," +

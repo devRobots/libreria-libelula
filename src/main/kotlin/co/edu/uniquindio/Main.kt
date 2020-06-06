@@ -1,13 +1,11 @@
 package co.edu.uniquindio
 
 import co.edu.uniquindio.dao.*
-import co.edu.uniquindio.modelo.Pais
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.stage.Stage
-import kotlin.system.exitProcess
 
 class Main : Application() {
 
@@ -37,17 +35,8 @@ class Main : Application() {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            LibroPedidoDAO().generarTabla()
-            LibroProveedorDAO().generarTabla()
-            LibroCategoriaDAO().generarTabla()
-            LibroVentaDAO().generarTabla()
-
-            for (i in 3..8) {
-                println(PaisDAO().eliminar(i))
-            }
-            println(PaisDAO().listar())
-            exitProcess(0)
-            //launch(Main::class.java)
+            DAOMaster().generarTablas()
+            launch(Main::class.java)
         }
     }
 }
