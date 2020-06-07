@@ -29,7 +29,7 @@ interface ICrudSQL {
         sentencia: String,
         propiedades: List<String>,
         parametros: List<Any?>
-    ): Map<String, List<Any?>>
+    ): List<Map<String, Any?>>
 
     /**
      * Metodo que devuelve un objeto de tipo dominio
@@ -43,8 +43,8 @@ interface ICrudSQL {
     @Throws(SQLException::class)
     fun consultarFila(
         sentencia: String,
-        parametros: List<Any?>,
-        propiedades: List<String>
+        propiedades: List<String>,
+        parametros: List<Any?>
     ): Map<String, Any?>
 
     /**

@@ -20,23 +20,6 @@ object PersonaDAO: IDao<Persona>("Persona") {
         }
     }
 
-    override fun buscar(id: Int): Persona? {
-        TODO("Not yet implemented")
-    }
-
-    override fun listar(): List<Persona> {
-        TODO("Not yet implemented")
-    }
-
-    override fun eliminar(id: Int): Boolean {
-        return eliminarPorId(id)
-    }
-
-    override fun actualizar(nuevaEntidad: Persona): Boolean {
-        val eliminacion = eliminarPorId(nuevaEntidad.id)
-        return if (eliminacion) insertar(nuevaEntidad) else eliminacion
-    }
-
     override fun insertar(entidad: Persona): Boolean {
         TODO("Not yet implemented")
     }

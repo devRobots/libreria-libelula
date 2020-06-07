@@ -4,9 +4,9 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class Venta(
-    val id: Int,
+    id: Int,
     val fechaVenta: Date,
     val cliente: Cliente,
     val empleado: Empleado,
     val libros: ArrayList<Libro> = ArrayList()
-)
+) : Entidad(id)

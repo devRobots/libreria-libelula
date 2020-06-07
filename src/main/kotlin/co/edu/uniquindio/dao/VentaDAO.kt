@@ -23,23 +23,6 @@ object VentaDAO: IDao<Venta>("Venta") {
         }
     }
 
-    override fun buscar(id: Int): Venta? {
-        TODO("Not yet implemented")
-    }
-
-    override fun listar(): List<Venta> {
-        TODO("Not yet implemented")
-    }
-
-    override fun eliminar(id: Int): Boolean {
-        return eliminarPorId(id)
-    }
-
-    override fun actualizar(nuevaEntidad: Venta): Boolean {
-        val eliminacion = eliminarPorId(nuevaEntidad.id)
-        return if (eliminacion) insertar(nuevaEntidad) else eliminacion
-    }
-
     override fun insertar(entidad: Venta): Boolean {
         TODO("Not yet implemented")
     }

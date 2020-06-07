@@ -4,7 +4,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class Libro (
-    val id: Int,
+    id: Int,
     val precio: Double,
     val titulo: String,
     val fechaPublicacion: Date,
@@ -14,4 +14,4 @@ class Libro (
     val proveedores: ArrayList<Proveedor> = ArrayList(),
     val ventas: ArrayList<Venta> = ArrayList(),
     val pedidos: ArrayList<Pedido> = ArrayList()
-)
+) : Entidad(id)

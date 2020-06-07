@@ -1,282 +1,259 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
-  <tabs>
-    <Tab text="Ventas">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <GridPane hgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.controlador.VentanaPrincipalController">
+   <center>
+      <TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Libros">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <BorderPane>
-                           <center>
-                              <ListView prefHeight="200.0" prefWidth="200.0">
-                                 <BorderPane.margin>
-                                    <Insets bottom="10.0" />
-                                 </BorderPane.margin>
-                              </ListView>
-                           </center>
-                           <bottom>
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Nuevo" BorderPane.alignment="CENTER" />
-                           </bottom>
-                        </BorderPane>
-                        <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Eliminar" GridPane.rowIndex="4" />
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Modificar" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label text="Valor Total:" GridPane.rowIndex="1" />
-                              <Label text="Cliente:" GridPane.rowIndex="2" />
-                              <Label text="Empleado:" GridPane.rowIndex="3" />
-                              <Label text="Fecha de Venta:" />
-                              <TextField GridPane.columnIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                           </children>
-                        </GridPane>
-                     </children>
-                  </GridPane>
-               </children></AnchorPane>
-      </content>
-    </Tab>
-    <Tab text="Libros">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <GridPane hgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <children>
-                        <BorderPane>
-                           <center>
-                              <ListView prefHeight="200.0" prefWidth="200.0">
-                                 <BorderPane.margin>
-                                    <Insets bottom="10.0" />
-                                 </BorderPane.margin>
-                              </ListView>
-                           </center>
-                           <bottom>
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Nuevo" BorderPane.alignment="CENTER" />
-                           </bottom>
-                        </BorderPane>
-                        <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                        <GridPane hgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
                            <children>
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Eliminar" GridPane.rowIndex="7" />
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Modificar" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                              <Label text="Editorial:" GridPane.rowIndex="2" />
-                              <Label text="Fecha Publicacion:" GridPane.rowIndex="3" />
-                              <Label text="Precio:" GridPane.rowIndex="4" />
-                              <Label text="Titulo:" />
-                              <TextField GridPane.columnIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label text="Autor:" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="Categorias:" GridPane.rowIndex="5" />
-                              <Label text="Proveedores:" GridPane.rowIndex="6" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <ListView fx:id="listaLibros" prefHeight="200.0" prefWidth="200.0" />
+                              <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Editorial:" GridPane.rowIndex="2" />
+                                    <Label text="Fecha Publicacion:" GridPane.rowIndex="3" />
+                                    <Label text="Precio:" GridPane.rowIndex="4" />
+                                    <Label text="Titulo:" />
+                                    <TextField fx:id="txtLibroTitulo" editable="false" GridPane.columnIndex="1" />
+                                    <TextField fx:id="txtLibroEditorial" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtLibroFecha" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtLibroPrecio" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Label text="Autor:" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtLibroAutor" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label text="Categorias:" GridPane.rowIndex="5" />
+                                    <Label text="Proveedores:" GridPane.rowIndex="6" />
+                                    <TextField fx:id="txtLibroCategorias" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="txtLibroProveedores" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                 </children>
+                              </GridPane>
                            </children>
                         </GridPane>
                      </children>
-                  </GridPane>
-               </children></AnchorPane>
-      </content>
-    </Tab>
-      <Tab text="Empleados">
-        <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                <children>
-                    <GridPane hgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                        <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        </columnConstraints>
-                        <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        </rowConstraints>
-                        <padding>
-                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                        </padding>
-                        <children>
-                            <BorderPane>
-                                <center>
-                                    <ListView prefHeight="200.0" prefWidth="200.0">
-                                        <BorderPane.margin>
-                                            <Insets bottom="10.0" />
-                                        </BorderPane.margin>
-                                    </ListView>
-                                </center>
-                                <bottom>
-                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Nuevo" BorderPane.alignment="CENTER" />
-                                </bottom>
-                            </BorderPane>
-                            <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
-                                <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
-                                <children>
-                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Eliminar" GridPane.rowIndex="5" />
-                                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Modificar" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <Label text="Direccion:" GridPane.rowIndex="1" />
-                                    <Label text="Correo electronico:" GridPane.rowIndex="2" />
-                                    <Label text="Fecha Nacimiento:" GridPane.rowIndex="3" />
-                                    <Label text="Nombre:" />
-                                    <TextField GridPane.columnIndex="1" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label text="Cargo:" GridPane.rowIndex="4" />
-                                </children>
-                            </GridPane>
-                        </children>
-                    </GridPane>
-                </children>
-            </AnchorPane>
-        </content>
-      </Tab>
-      <Tab text="Pedidos">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                  <GridPane hgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                      <columnConstraints>
-                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      </columnConstraints>
-                      <rowConstraints>
-                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      </rowConstraints>
-                      <padding>
-                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                      </padding>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Empleados">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                       <children>
-                          <BorderPane>
-                              <center>
-                                  <ListView prefHeight="200.0" prefWidth="200.0">
-                                      <BorderPane.margin>
-                                          <Insets bottom="10.0" />
-                                      </BorderPane.margin>
-                                  </ListView>
-                              </center>
-                              <bottom>
-                                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Nuevo" BorderPane.alignment="CENTER" />
-                              </bottom>
-                          </BorderPane>
-                          <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                          <GridPane hgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                               <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               </columnConstraints>
                               <rowConstraints>
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               </rowConstraints>
+                              <padding>
+                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                              </padding>
                               <children>
-                                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Eliminar" GridPane.rowIndex="3" />
-                                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Modificar" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                  <Label text="Empleado:" GridPane.rowIndex="1" />
-                                  <Label text="Proveedor:" GridPane.rowIndex="2" />
-                                  <Label text="Fecha de Pedido:" />
-                                  <TextField GridPane.columnIndex="1" />
-                                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <ListView fx:id="listaEmpleados" prefHeight="200.0" prefWidth="200.0" />
+                                  <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                      <children>
+                                          <Label text="Direccion:" GridPane.rowIndex="1" />
+                                          <Label text="Correo electronico:" GridPane.rowIndex="2" />
+                                          <Label text="Fecha Nacimiento:" GridPane.rowIndex="3" />
+                                          <Label text="Nombre:" />
+                                          <TextField fx:id="txtEmpleadoNombre" editable="false" GridPane.columnIndex="1" />
+                                          <TextField fx:id="txtEmpleadoDireccion" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtEmpleadoCorreo" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="txtEmpleadoFecha" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtEmpleadoCargo" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Label text="Cargo:" GridPane.rowIndex="4" />
+                                      </children>
+                                  </GridPane>
                               </children>
                           </GridPane>
                       </children>
-                  </GridPane>
-              </children>
-          </AnchorPane>
-        </content>
-      </Tab>
-      <Tab text="Reportes">
-        <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <BorderPane layoutX="6.0" layoutY="8.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <top>
-                        <HBox prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Ventas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane hgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
                            <children>
-                              <Label maxHeight="1.7976931348623157E308" text="Seleccione un reporte:" />
-                              <ComboBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
-                              <Button mnemonicParsing="false" text="Generar Reporte" />
+                              <ListView fx:id="listaVentas" prefHeight="200.0" prefWidth="200.0" />
+                              <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Valor Total:" GridPane.rowIndex="1" />
+                                    <Label text="Cliente:" GridPane.rowIndex="2" />
+                                    <Label text="Empleado:" GridPane.rowIndex="3" />
+                                    <Label text="Fecha de Venta:" />
+                                    <TextField fx:id="txtVentaFecha" editable="false" GridPane.columnIndex="1" />
+                                    <TextField fx:id="txtVentaValor" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtVentaCliente" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtVentaEmpleado" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
                            </children>
-                        </HBox>
-                     </top>
-                     <center>
-                        <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                           <BorderPane.margin>
-                              <Insets top="10.0" />
-                           </BorderPane.margin>
-                        </ListView>
-                     </center>
-                  </BorderPane>
-               </children>
-            </AnchorPane>
-        </content>
-      </Tab>
-  </tabs>
-</TabPane>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Pedidos">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <GridPane hgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                            <children>
+                                <BorderPane>
+                                    <center>
+                                        <ListView fx:id="listaPedidos" prefHeight="200.0" prefWidth="200.0">
+                                            <BorderPane.margin>
+                                                <Insets bottom="10.0" />
+                                            </BorderPane.margin>
+                                        </ListView>
+                                    </center>
+                                </BorderPane>
+                                <GridPane hgap="10.0" vgap="10.0" GridPane.columnIndex="1">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Empleado:" GridPane.rowIndex="1" />
+                                        <Label text="Proveedor:" GridPane.rowIndex="2" />
+                                        <Label text="Fecha de Pedido:" />
+                                        <TextField fx:id="txtPedidoFecha" editable="false" GridPane.columnIndex="1" />
+                                        <TextField fx:id="txtPedidoEmpleado" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <TextField fx:id="txtPedidoProveedor" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Reportes">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="listaReportes" layoutX="10.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <bottom>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+          <Button mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+            <Button mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+            <Button mnemonicParsing="false" onAction="#modificar" text="Modificar" />
+            <MenuButton mnemonicParsing="false" onAction="#reportar" text="Generar Reporte">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Reporte 1" />
+                <MenuItem mnemonicParsing="false" text="Reporte 2" />
+                  <MenuItem mnemonicParsing="false" text="Reporte 3" />
+                  <MenuItem mnemonicParsing="false" text="Reporte 2" />
+                  <MenuItem mnemonicParsing="false" text="Reporte 4" />
+                  <MenuItem mnemonicParsing="false" text="Reporte 5" />
+                  <MenuItem mnemonicParsing="false" text="Reporte 6" />
+                  <MenuItem mnemonicParsing="false" text="Reporte 7" />
+                  <MenuItem mnemonicParsing="false" text="Reporte 8" />
+                  <MenuItem mnemonicParsing="false" text="Reporte 9" />
+                  <MenuItem mnemonicParsing="false" text="Reporte 10" />
+              </items>
+            </MenuButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>

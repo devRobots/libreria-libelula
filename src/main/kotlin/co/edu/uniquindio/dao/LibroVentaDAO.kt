@@ -1,9 +1,8 @@
 package co.edu.uniquindio.dao
 
-import co.edu.uniquindio.modelo.Libro
-import co.edu.uniquindio.modelo.Venta
+import co.edu.uniquindio.modelo.LibroVenta
 
-object LibroVentaDAO : IDao<Map<Libro, Venta>>("Libro_Venta") {
+object LibroVentaDAO : IDao<LibroVenta>("Libro_Venta") {
     override fun generarTabla(): Boolean {
         LibroDAO.generarTabla()
         VentaDAO.generarTabla()
@@ -23,25 +22,4 @@ object LibroVentaDAO : IDao<Map<Libro, Venta>>("Libro_Venta") {
             false
         }
     }
-
-    override fun buscar(id: Int): Map<Libro, Venta>? {
-        TODO("Not yet implemented")
-    }
-
-    override fun listar(): List<Map<Libro, Venta>> {
-        TODO("Not yet implemented")
-    }
-
-    override fun eliminar(id: Int): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun actualizar(nuevaEntidad: Map<Libro, Venta>): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun insertar(entidad: Map<Libro, Venta>): Boolean {
-        TODO("Not yet implemented")
-    }
-
 }

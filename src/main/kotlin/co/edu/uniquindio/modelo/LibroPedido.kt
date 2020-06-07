@@ -1,6 +1,7 @@
 package co.edu.uniquindio.modelo
 
-class Cargo(
+class LibroPedido(
     id: Int,
-    val nombre: String
+    libro: Libro,
+    pedido: Pedido
 ) : Entidad(id)

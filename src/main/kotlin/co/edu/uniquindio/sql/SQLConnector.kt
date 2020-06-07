@@ -41,33 +41,31 @@ object SQLConnector : ICrudSQL {
         sentencia: String,
         propiedades: List<String>,
         parametros: List<Any?>
-    ): Map<String, List<Any?>> {
+    ): List<Map<String, Any?>> {
         abrirConexion()
 
-        return if (conexion != null) {
+        if (conexion != null) {
+            val result: ArrayList<MutableMap<String, Any>> = ArrayList()
+
             val rs: ResultSet
             val ps: PreparedStatement
-            val result: MutableMap<String, List<Any>> = HashMap()
 
             try {
                 ps = conexion!!.prepareStatement(sentencia)
                 for (i in parametros.indices) {
                     ps.setString(i + 1, if (parametros[i] != null) parametros[i].toString() else null)
                 }
+
                 rs = ps.executeQuery()
                 val rsMetaData = rs.metaData
                 val numberOfColumns = rsMetaData.columnCount
-                val resultados =
-                    ArrayList<ArrayList<Any>>()
+
                 while (rs.next()) {
-                    val objetoRes = ArrayList<Any>()
+                    val objetoRes = emptyMap<String, Any>().toMutableMap()
                     for (i in 0 until numberOfColumns) {
-                        objetoRes.add(rs.getObject(i + 1))
+                        objetoRes[propiedades[i]] = rs.getObject(i + 1)
                     }
-                    resultados.add(objetoRes)
-                }
-                for (i in 0 until numberOfColumns) {
-                    result[propiedades[i]] = resultados[i]
+                    result.add(objetoRes)
                 }
             } catch (ex: Exception) {
                 throw SQLException("Imposible realizar consulta=>" + ex.message)
@@ -75,7 +73,7 @@ object SQLConnector : ICrudSQL {
             rs.close()
             ps.close()
             cerrarConexion()
-            result
+            return result
         } else {
             throw SQLException("No existe conexion con la BD.")
         }
@@ -84,14 +82,13 @@ object SQLConnector : ICrudSQL {
     @Throws(SQLException::class)
     override fun consultarFila(
         sentencia: String,
-        parametros: List<Any?>,
-        propiedades: List<String>
+        propiedades: List<String>,
+        parametros: List<Any?>
     ): Map<String, Any?> {
         return if (conexion != null) {
             val rs: ResultSet
             val ps: PreparedStatement
-            val objResultado: MutableMap<String, Any> =
-                HashMap()
+            val objResultado: MutableMap<String, Any> = HashMap()
             try {
                 abrirConexion()
                 ps = conexion!!.prepareStatement(sentencia)

@@ -1,6 +1,5 @@
 package co.edu.uniquindio.dao
 
-import co.edu.uniquindio.modelo.Cargo
 import co.edu.uniquindio.modelo.Categoria
 
 object CategoriaDAO: IDao<Categoria>("Categoria") {
@@ -16,23 +15,6 @@ object CategoriaDAO: IDao<Categoria>("Categoria") {
         } catch (ex: Exception) {
             false
         }
-    }
-
-    override fun buscar(id: Int): Categoria? {
-        TODO("Not yet implemented")
-    }
-
-    override fun listar(): List<Categoria> {
-        TODO("Not yet implemented")
-    }
-
-    override fun eliminar(id: Int): Boolean {
-        return eliminarPorId(id)
-    }
-
-    override fun actualizar(nuevaEntidad: Categoria): Boolean {
-        val eliminacion = eliminarPorId(nuevaEntidad.id)
-        return if (eliminacion) insertar(nuevaEntidad) else eliminacion
     }
 
     override fun insertar(entidad: Categoria): Boolean {

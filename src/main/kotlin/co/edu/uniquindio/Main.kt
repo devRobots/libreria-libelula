@@ -1,11 +1,13 @@
 package co.edu.uniquindio
 
 import co.edu.uniquindio.dao.*
+import co.edu.uniquindio.modelo.Pais
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.stage.Stage
+import kotlin.system.exitProcess
 
 class Main : Application() {
 
@@ -35,8 +37,10 @@ class Main : Application() {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            DAOMaster.generarTablas()
-            launch(Main::class.java)
+            //DAOMaster.generarTablas()
+            PaisDAO.insertar(Pais("Chile"))
+            exitProcess(0)
+            //launch(Main::class.java)
         }
     }
 }
