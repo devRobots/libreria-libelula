@@ -2,10 +2,10 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Libro
 
-class LibroDAO: IDao<Libro>() {
+object LibroDAO: IDao<Libro>() {
     override fun generarTabla(): Boolean {
-        EditorialDAO().generarTabla()
-        AutorDAO().generarTabla()
+        EditorialDAO.generarTabla()
+        AutorDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
                 "CREATE TABLE Libro (" +

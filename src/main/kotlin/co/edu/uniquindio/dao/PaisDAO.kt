@@ -3,7 +3,7 @@ package co.edu.uniquindio.dao
 import co.edu.uniquindio.modelo.Pais
 import kotlin.collections.ArrayList
 
-class PaisDAO : IDao<Pais>() {
+object PaisDAO : IDao<Pais>() {
     override fun generarTabla(): Boolean {
         return try {
             sqlConnector.generarTabla(
@@ -62,12 +62,14 @@ class PaisDAO : IDao<Pais>() {
     }
 
     override fun insertar(entidad: Pais): Boolean {
-        val propiedades = arrayListOf(
-            "nombre"
-        )
+        val propiedades = obtenerAtributosClase(Pais::class) as ArrayList<String>
+        propiedades.remove("id")
+        propiedades.remove("ciudades")
+
         val parametros = arrayListOf(
             entidad.nombre
         )
+
         return insertar("Pais", propiedades, parametros)
     }
 }

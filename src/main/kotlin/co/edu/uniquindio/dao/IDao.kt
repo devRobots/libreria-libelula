@@ -1,8 +1,10 @@
 package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.sql.SQLConnector
+import kotlin.reflect.*
+import kotlin.reflect.full.memberProperties
 
-abstract class IDao<T> {
+abstract class IDao<T : Any> {
     protected val sqlConnector: SQLConnector = SQLConnector()
 
     /**
@@ -70,5 +72,27 @@ abstract class IDao<T> {
         } catch (ex: Exception) {
             false
         }
+    }
+
+    protected fun obtenerAtributosClase(clase: KClass<T>): List<String> {
+        val atributos = ArrayList<String>()
+
+        val atributosTmp = clase.memberProperties
+        for (atributo in atributosTmp) {
+            atributos.add(atributo.name)
+        }
+
+        return atributos
+    }
+
+    protected fun obtenerTipoAtributosClase(clase: KClass<T>): List<KType> {
+        val tipos = ArrayList<KType>()
+
+        val atributosTmp = clase.memberProperties
+        for (atributo in atributosTmp) {
+            tipos.add(atributo.returnType)
+        }
+
+        return tipos
     }
 }

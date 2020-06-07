@@ -2,9 +2,9 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Editorial
 
-class EditorialDAO: IDao<Editorial>() {
+object EditorialDAO: IDao<Editorial>() {
     override fun generarTabla(): Boolean {
-        CiudadDAO().generarTabla()
+        CiudadDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
                 "CREATE TABLE Editorial (" +

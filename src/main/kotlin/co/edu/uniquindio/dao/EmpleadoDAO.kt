@@ -2,10 +2,10 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Empleado
 
-class EmpleadoDAO: IDao<Empleado>() {
+object EmpleadoDAO : IDao<Empleado>() {
     override fun generarTabla(): Boolean {
-        CargoDAO().generarTabla()
-        PersonaDAO().generarTabla()
+        CargoDAO.generarTabla()
+        PersonaDAO.generarTabla()
         return try {
             return sqlConnector.generarTabla(
                 "CREATE TABLE Empleado (" +
@@ -30,7 +30,7 @@ class EmpleadoDAO: IDao<Empleado>() {
     }
 
     override fun eliminar(id: Int): Boolean {
-        TODO("Not yet implemented")
+        TODO("Noy yet implemented")
     }
 
     override fun actualizar(nuevaEntidad: Empleado): Boolean {

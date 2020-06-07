@@ -2,9 +2,9 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Venta
 
-class VentaDAO: IDao<Venta>() {
+object VentaDAO: IDao<Venta>() {
     override fun generarTabla(): Boolean {
-        EmpleadoDAO().generarTabla()
+        EmpleadoDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
                 "CREATE TABLE Venta (" +

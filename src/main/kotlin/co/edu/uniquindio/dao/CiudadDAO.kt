@@ -2,9 +2,9 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Ciudad
 
-class CiudadDAO : IDao<Ciudad>() {
+object CiudadDAO : IDao<Ciudad>() {
     override fun generarTabla(): Boolean {
-        PaisDAO().generarTabla()
+        PaisDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
                 "CREATE TABLE Ciudad (" +

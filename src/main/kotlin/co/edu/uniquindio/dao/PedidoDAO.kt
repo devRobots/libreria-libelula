@@ -2,10 +2,10 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Pedido
 
-class PedidoDAO: IDao<Pedido>() {
+object PedidoDAO: IDao<Pedido>() {
     override fun generarTabla(): Boolean {
-        ProveedorDAO().generarTabla()
-        EmpleadoDAO().generarTabla()
+        ProveedorDAO.generarTabla()
+        EmpleadoDAO.generarTabla()
         return try {
             return sqlConnector.generarTabla(
                 "CREATE TABLE Pedido (" +

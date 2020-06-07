@@ -2,7 +2,7 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Persona
 
-class PersonaDAO: IDao<Persona>() {
+object PersonaDAO: IDao<Persona>() {
     override fun generarTabla(): Boolean {
         return try {
             sqlConnector.generarTabla(

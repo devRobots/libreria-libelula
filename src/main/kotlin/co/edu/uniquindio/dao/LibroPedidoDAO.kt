@@ -3,10 +3,10 @@ package co.edu.uniquindio.dao
 import co.edu.uniquindio.modelo.Libro
 import co.edu.uniquindio.modelo.Pedido
 
-class LibroPedidoDAO: IDao<Map<Libro, Pedido>>() {
+object LibroPedidoDAO: IDao<Map<Libro, Pedido>>() {
     override fun generarTabla(): Boolean {
-        LibroDAO().generarTabla()
-        PedidoDAO().generarTabla()
+        LibroDAO.generarTabla()
+        PedidoDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
                 "CREATE TABLE Libro_Pedido (" +

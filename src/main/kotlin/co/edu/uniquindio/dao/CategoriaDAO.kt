@@ -2,7 +2,7 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Categoria
 
-class CategoriaDAO: IDao<Categoria>() {
+object CategoriaDAO: IDao<Categoria>() {
     override fun generarTabla(): Boolean {
         return try {
             sqlConnector.generarTabla(

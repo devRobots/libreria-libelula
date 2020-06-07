@@ -2,9 +2,9 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Autor
 
-class AutorDAO: IDao<Autor>() {
+object AutorDAO: IDao<Autor>() {
     override fun generarTabla(): Boolean {
-        PaisDAO().generarTabla()
+        PaisDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
                 "CREATE TABLE Autor (" +
