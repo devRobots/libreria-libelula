@@ -12,7 +12,7 @@ object PersonaDAO: IDao<Persona>("Persona") {
                         "direccion VARCHAR(50)," +
                         "correo VARCHAR(50)," +
                         "fecha_nacimiento DATE," +
-                        "Constraint pk_persona Primary Key (id)" +
+                        "Constraint pk_$nombre Primary Key (id)" +
                         ")"
             )
         } catch (ex: Exception) {

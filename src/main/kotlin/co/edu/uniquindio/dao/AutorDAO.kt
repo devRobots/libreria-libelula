@@ -13,8 +13,8 @@ object AutorDAO: IDao<Autor>("Autor") {
                         "descripcion VARCHAR(110)," +
                         "seudonimo VARCHAR(50)," +
                         "nacionalidad INTEGER NOT NULL," +
-                        "Constraint pk_autor Primary Key (id)," +
-                        "Constraint fk_autor_pais Foreign Key (nacionalidad) references Pais (id)" +
+                        "Constraint pk_$nombre Primary Key (id)," +
+                        "Constraint fk_${nombre}_pais Foreign Key (nacionalidad) references Pais (id)" +
                         ")"
             )
         } catch (ex: Exception) {

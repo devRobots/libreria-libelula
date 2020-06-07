@@ -12,8 +12,8 @@ object EditorialDAO: IDao<Editorial>("Editorial") {
                         "nombre VARCHAR(50) NOT NULL," +
                         "correo VARCHAR(50)," +
                         "ciudad INTEGER NOT NULL," +
-                        "Constraint pk_editorial Primary Key (id)," +
-                        "Constraint fk_editorial_ciudad Foreign Key (ciudad) references Ciudad (id)" +
+                        "Constraint pk_$nombre Primary Key (id)," +
+                        "Constraint fk_${nombre}_ciudad Foreign Key (ciudad) references Ciudad (id)" +
                         ")"
             )
         } catch (ex: Exception) {

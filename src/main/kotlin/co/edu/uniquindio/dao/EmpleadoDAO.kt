@@ -11,9 +11,9 @@ object EmpleadoDAO : IDao<Empleado>("Empleado") {
                 "CREATE TABLE $nombre (" +
                         "id INTEGER NOT NULL," +
                         "cargo INTEGER NOT NULL," +
-                        "Constraint pk_empleado Primary Key (id)," +
-                        "Constraint fk_empleado_persona Foreign Key (id) references Persona (id)," +
-                        "Constraint fk_empleado_cargo Foreign Key (cargo) references Cargo (id)" +
+                        "Constraint pk_$nombre Primary Key (id)," +
+                        "Constraint fk_${nombre}_persona Foreign Key (id) references Persona (id)," +
+                        "Constraint fk_${nombre}_cargo Foreign Key (cargo) references Cargo (id)" +
                         ")"
             )
         } catch (ex: Exception) {

@@ -13,9 +13,9 @@ object VentaDAO: IDao<Venta>("Venta") {
                         "valor_total DOUBLE," +
                         "empleado INTEGER NOT NULL," +
                         "persona INTEGER NOT NULL," +
-                        "Constraint pk_venta Primary Key (id)," +
-                        "Constraint fk_venta_empleado Foreign Key (empleado) references Empleado (id)," +
-                        "Constraint fk_venta_persona Foreign Key (persona) references Persona (id)" +
+                        "Constraint pk_$nombre Primary Key (id)," +
+                        "Constraint fk_${nombre}_empleado Foreign Key (empleado) references Empleado (id)," +
+                        "Constraint fk_${nombre}_persona Foreign Key (persona) references Persona (id)" +
                         ")"
             )
         } catch (ex: Exception) {

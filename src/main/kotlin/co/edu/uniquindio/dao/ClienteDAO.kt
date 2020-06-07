@@ -1,24 +1,20 @@
 package co.edu.uniquindio.dao
 
-import co.edu.uniquindio.modelo.Cargo
+import co.edu.uniquindio.modelo.Cliente
 
-object CargoDAO: IDao<Cargo>("Cargo") {
+object ClienteDAO : IDao<Cliente>("Cliente") {
     override fun generarTabla(): Boolean {
+        PersonaDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
                 "CREATE TABLE $nombre (" +
                         "id INTEGER NOT NULL AUTO_INCREMENT," +
-                        "nombre VARCHAR(50) NOT NULL," +
-                        "Constraint pk_$nombre Primary Key (id)" +
+                        "Constraint pk_$nombre Primary Key (id)," +
+                        "Constraint fk_${nombre}_persona Foreign Key (id) references Persona (id)" +
                         ")"
             )
         } catch (ex: Exception) {
             false
         }
     }
-
-    override fun insertar(entidad: Cargo): Boolean {
-        TODO("Not yet implemented")
-    }
-
 }

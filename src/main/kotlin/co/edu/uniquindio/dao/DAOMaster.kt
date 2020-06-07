@@ -10,6 +10,7 @@ object DAOMaster {
         val flag2 = LibroProveedorDAO.generarTabla()
         val flag3 = LibroCategoriaDAO.generarTabla()
         val flag4 = LibroVentaDAO.generarTabla()
-        return flag1 && flag2 && flag3 && flag4
+        val flag5 = ClienteDAO.generarTabla()
+        return flag1 && flag2 && flag3 && flag4 && flag5
     }
 }

@@ -17,9 +17,9 @@ object LibroDAO: IDao<Libro>("Libro") {
                         "editorial INTEGER NOT NULL," +
                         "libro_categoria INTEGER NOT NULL," +
                         "libro_proveedor INTEGER NOT NULL," +
-                        "Constraint pk_libro Primary Key (id)," +
-                        "Constraint fk_libro_autor Foreign Key (autor) references Autor (id)," +
-                        "Constraint fk_libro_editorial Foreign Key (editorial) references Editorial (id)" +
+                        "Constraint pk_$nombre Primary Key (id)," +
+                        "Constraint fk_${nombre}_autor Foreign Key (autor) references Autor (id)," +
+                        "Constraint fk_${nombre}_editorial Foreign Key (editorial) references Editorial (id)" +
                         ")"
             )
         } catch (ex: Exception) {

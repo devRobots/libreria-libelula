@@ -24,7 +24,7 @@ open class IDao<T : Entidad>(protected val nombre: String) {
      */
     open fun buscar(id: Int, clase: KClass<T>, omitir: List<String> = emptyList()): T? {
         val sentencia = "SELECT * FROM $nombre WHERE id = ?"
-        val propiedades = obtenerAtributosClase(clase)as ArrayList
+        val propiedades = obtenerAtributosClase(clase) as ArrayList
         for (omision in omitir) {
             propiedades.remove(omision)
         }

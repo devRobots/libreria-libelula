@@ -1,6 +1,7 @@
 package co.edu.uniquindio
 
 import co.edu.uniquindio.dao.*
+import co.edu.uniquindio.modelo.Ciudad
 import co.edu.uniquindio.modelo.Pais
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
@@ -37,8 +38,18 @@ class Main : Application() {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            //DAOMaster.generarTablas()
-            PaisDAO.insertar(Pais("Chile"))
+            DAOMaster.generarTablas()
+            /*
+            val pais = PaisDAO.buscar(2, Pais::class, omitir = arrayListOf("ciudades"))
+            println(pais?.nombre)
+            val res = CiudadDAO.insertar(
+                Ciudad(
+                    "Tangamandapio",
+                    pais!!
+                )
+            )
+            println(res)
+            */
             exitProcess(0)
             //launch(Main::class.java)
         }

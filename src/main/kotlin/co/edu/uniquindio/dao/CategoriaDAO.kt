@@ -9,7 +9,7 @@ object CategoriaDAO: IDao<Categoria>("Categoria") {
                 "CREATE TABLE $nombre (" +
                         "id INTEGER NOT NULL AUTO_INCREMENT," +
                         "nombre VARCHAR(50) NOT NULL," +
-                        "Constraint pk_categoria Primary Key (id)" +
+                        "Constraint pk_$nombre Primary Key (id)" +
                         ")"
             )
         } catch (ex: Exception) {

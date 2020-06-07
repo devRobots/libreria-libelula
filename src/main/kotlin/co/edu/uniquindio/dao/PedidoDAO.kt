@@ -13,9 +13,9 @@ object PedidoDAO: IDao<Pedido>("Pedido") {
                         "fecha DATE," +
                         "empleado INTEGER NOT NULL," +
                         "proveedor INTEGER NOT NULL," +
-                        "Constraint pk_pedido Primary Key (id)," +
-                        "Constraint fk_pedido_empleado Foreign Key (empleado) references Empleado (id)," +
-                        "Constraint fk_pedido_proveedor Foreign Key (proveedor) references Proveedor (id)" +
+                        "Constraint pk_$nombre Primary Key (id)," +
+                        "Constraint fk_${nombre}_empleado Foreign Key (empleado) references Empleado (id)," +
+                        "Constraint fk_${nombre}_proveedor Foreign Key (proveedor) references Proveedor (id)" +
                         ")"
             )
         } catch (ex: Exception) {

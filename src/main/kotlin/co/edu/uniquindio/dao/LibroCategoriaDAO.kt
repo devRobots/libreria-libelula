@@ -12,9 +12,9 @@ object LibroCategoriaDAO: IDao<LibroCategoria>("Libro_Categoria") {
                         "id INTEGER NOT NULL," +
                         "libro INTEGER NOT NULL," +
                         "categoria INTEGER NOT NULL," +
-                        "Constraint pk_libro_categoria Primary Key (id)," +
-                        "Constraint fk_libro_categoria_libro Foreign Key (libro) references Libro (id)," +
-                        "Constraint fk_libro_categoria_categoria Foreign Key (categoria) references Categoria (id)" +
+                        "Constraint pk_$nombre Primary Key (id)," +
+                        "Constraint fk_${nombre}_libro Foreign Key (libro) references Libro (id)," +
+                        "Constraint fk_${nombre}_categoria Foreign Key (categoria) references Categoria (id)" +
                         ")"
             )
         } catch (ex: Exception) {

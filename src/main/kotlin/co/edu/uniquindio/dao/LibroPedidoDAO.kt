@@ -13,9 +13,9 @@ object LibroPedidoDAO: IDao<LibroPedido>("Libro_Pedido") {
                         "cantidad_libros INTEGER," +
                         "libro INTEGER NOT NULL," +
                         "pedido INTEGER NOT NULL," +
-                        "Constraint pk_libro_pedido Primary Key (id)," +
-                        "Constraint fk_libro_pedido_libro Foreign Key (libro) references Libro (id)," +
-                        "Constraint fk_libro_pedido_pedido Foreign Key (pedido) references Pedido (id)" +
+                        "Constraint pk_$nombre Primary Key (id)," +
+                        "Constraint fk_${nombre}_libro Foreign Key (libro) references Libro (id)," +
+                        "Constraint fk_${nombre}_pedido Foreign Key (pedido) references Pedido (id)" +
                         ")"
             )
         } catch (ex: Exception) {

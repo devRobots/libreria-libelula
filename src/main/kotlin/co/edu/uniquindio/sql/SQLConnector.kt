@@ -85,6 +85,7 @@ object SQLConnector : ICrudSQL {
         propiedades: List<String>,
         parametros: List<Any?>
     ): Map<String, Any?> {
+        abrirConexion()
         return if (conexion != null) {
             val rs: ResultSet
             val ps: PreparedStatement

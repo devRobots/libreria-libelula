@@ -10,7 +10,7 @@ object ProveedorDAO: IDao<Proveedor>("Proveedor") {
                         "id INTEGER NOT NULL AUTO_INCREMENT," +
                         "nombre VARCHAR(50) NOT NULL," +
                         "correo VARCHAR(50)," +
-                        "Constraint pk_proveedor Primary Key (id)" +
+                        "Constraint pk_$nombre Primary Key (id)" +
                         ")"
             )
         } catch (ex: Exception) {
