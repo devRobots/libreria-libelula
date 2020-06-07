@@ -3,7 +3,7 @@ package co.edu.uniquindio.dao
 import co.edu.uniquindio.sql.SQLConnector
 
 object DAOMaster {
-    val sqlConnector: SQLConnector = SQLConnector()
+    val sqlConnector = SQLConnector
 
     fun generarTablas(): Boolean {
         val flag1 = LibroPedidoDAO.generarTabla()

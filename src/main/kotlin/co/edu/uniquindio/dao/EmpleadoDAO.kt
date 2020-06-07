@@ -30,11 +30,12 @@ object EmpleadoDAO : IDao<Empleado>("Empleado") {
     }
 
     override fun eliminar(id: Int): Boolean {
-        TODO("Noy yet implemented")
+        return eliminarPorId(id)
     }
 
     override fun actualizar(nuevaEntidad: Empleado): Boolean {
-        TODO("Not yet implemented")
+        val eliminacion = eliminarPorId(nuevaEntidad.id)
+        return if (eliminacion) insertar(nuevaEntidad) else eliminacion
     }
 
     override fun insertar(entidad: Empleado): Boolean {

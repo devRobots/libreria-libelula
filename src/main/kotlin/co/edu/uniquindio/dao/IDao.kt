@@ -58,8 +58,8 @@ abstract class IDao<T : Any>(protected val nombre: String) {
      * @param valor El valor de la columna por el que se quiere eliminar
      * @return Boolean true si se elimino exitosamente, false en caso contrario
      */
-    protected fun eliminar(columna: String, valor: Int): Boolean {
-        val sentencia = "DELETE FROM $nombre WHERE $columna = ?"
+    protected fun eliminarPorId(valor: Int): Boolean {
+        val sentencia = "DELETE FROM $nombre WHERE id = ?"
         val valores = arrayListOf(valor)
         return try {
             sqlConnector.eliminar(sentencia, valores)

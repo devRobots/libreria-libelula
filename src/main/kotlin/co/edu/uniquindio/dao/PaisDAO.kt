@@ -48,11 +48,12 @@ object PaisDAO : IDao<Pais>("Pais") {
     }
 
     override fun eliminar(id: Int): Boolean {
-        return eliminar("id", id)
+        return eliminarPorId(id)
     }
 
     override fun actualizar(nuevaEntidad: Pais): Boolean {
-        return false
+        val eliminacion = eliminarPorId(nuevaEntidad.id)
+        return if (eliminacion) insertar(nuevaEntidad) else eliminacion
     }
 
     override fun insertar(entidad: Pais): Boolean {

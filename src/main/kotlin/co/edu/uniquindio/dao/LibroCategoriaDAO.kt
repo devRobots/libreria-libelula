@@ -35,7 +35,7 @@ object LibroCategoriaDAO: IDao<Map<Libro, Categoria>>("Libro_Categoria") {
     }
 
     override fun actualizar(nuevaEntidad: Map<Libro, Categoria>): Boolean {
-        TODO("Not yet implemented")
+        TODO("No yet implemented")
     }
 
     override fun insertar(entidad: Map<Libro, Categoria>): Boolean {
