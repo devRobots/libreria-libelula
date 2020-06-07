@@ -4,8 +4,8 @@ import co.edu.uniquindio.sql.SQLConnector
 import kotlin.reflect.*
 import kotlin.reflect.full.memberProperties
 
-abstract class IDao<T : Any> {
-    protected val sqlConnector: SQLConnector = SQLConnector()
+abstract class IDao<T : Any>(protected val nombre: String) {
+    protected val sqlConnector = SQLConnector
 
     /**
      * Metodo para generar la tabla de los objetos T
@@ -25,7 +25,7 @@ abstract class IDao<T : Any> {
      *
      * @return List<T> Una lista con todos los objetos T de la tabla
     </T> */
-    abstract fun listar(): List<T>?
+    abstract fun listar(): List<T>
 
     /**
      * Metodo para eliminar un objeto T de la tabla
@@ -52,14 +52,30 @@ abstract class IDao<T : Any> {
     abstract fun insertar(entidad: T): Boolean
 
     /**
+     * Metodo que construye la sentencia SQL de la eliminacion y la procesa
+     *
+     * @param columna El nombre de la columna por la que se quiere eliminar
+     * @param valor El valor de la columna por el que se quiere eliminar
+     * @return Boolean true si se elimino exitosamente, false en caso contrario
+     */
+    protected fun eliminar(columna: String, valor: Int): Boolean {
+        val sentencia = "DELETE FROM $nombre WHERE $columna = ?"
+        val valores = arrayListOf(valor)
+        return try {
+            sqlConnector.eliminar(sentencia, valores)
+        } catch (ex: Exception) {
+            false
+        }
+    }
+
+    /**
      * Metodo que construye la sentencia SQL de la insercion y la procesa
      *
-     * @param tabla La tabla en la que se quiere insertar
      * @param parametros Los parametros que va a tener la fila a insertar
      * @return Boolean true si se inserto exitosamente, false en caso contrario
      */
-    protected fun insertar(tabla: String, propiedades: List<String>, parametros: List<String>): Boolean {
-        var sentencia = "INSERT INTO $tabla ("
+    protected fun insertar(propiedades: List<String>, parametros: List<String>): Boolean {
+        var sentencia = "INSERT INTO $nombre ("
         for (i in propiedades.indices) {
             sentencia += propiedades[i] + if (i < parametros.size - 1) ", " else ")"
         }
@@ -74,6 +90,12 @@ abstract class IDao<T : Any> {
         }
     }
 
+    /**
+     * Metodo que obtiene todos los atributos de una clase
+     *
+     * @param clase La clase de la que se quieren extraer los atributos
+     * @return List<String> Lista con los nombres de los atributos que contiene la clase
+     */
     protected fun obtenerAtributosClase(clase: KClass<T>): List<String> {
         val atributos = ArrayList<String>()
 
@@ -83,16 +105,5 @@ abstract class IDao<T : Any> {
         }
 
         return atributos
-    }
-
-    protected fun obtenerTipoAtributosClase(clase: KClass<T>): List<KType> {
-        val tipos = ArrayList<KType>()
-
-        val atributosTmp = clase.memberProperties
-        for (atributo in atributosTmp) {
-            tipos.add(atributo.returnType)
-        }
-
-        return tipos
     }
 }

@@ -2,13 +2,13 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Libro
 
-object LibroDAO: IDao<Libro>() {
+object LibroDAO: IDao<Libro>("Libro") {
     override fun generarTabla(): Boolean {
         EditorialDAO.generarTabla()
         AutorDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
-                "CREATE TABLE Libro (" +
+                "CREATE TABLE $nombre (" +
                         "id INTEGER NOT NULL AUTO_INCREMENT," +
                         "precio DOUBLE NOT NULL," +
                         "titulo VARCHAR(50) NOT NULL," +
@@ -31,7 +31,7 @@ object LibroDAO: IDao<Libro>() {
         TODO("Not yet implemented")
     }
 
-    override fun listar(): List<Libro>? {
+    override fun listar(): List<Libro> {
         TODO("Not yet implemented")
     }
 

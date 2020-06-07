@@ -2,12 +2,12 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Autor
 
-object AutorDAO: IDao<Autor>() {
+object AutorDAO: IDao<Autor>("Autor") {
     override fun generarTabla(): Boolean {
         PaisDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
-                "CREATE TABLE Autor (" +
+                "CREATE TABLE $nombre (" +
                         "id INTEGER NOT NULL AUTO_INCREMENT," +
                         "nombre VARCHAR(50) NOT NULL," +
                         "descripcion VARCHAR(110)," +
@@ -26,7 +26,7 @@ object AutorDAO: IDao<Autor>() {
         TODO("Not yet implemented")
     }
 
-    override fun listar(): List<Autor>? {
+    override fun listar(): List<Autor> {
         TODO("Not yet implemented")
     }
 

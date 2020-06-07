@@ -2,11 +2,11 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Persona
 
-object PersonaDAO: IDao<Persona>() {
+object PersonaDAO: IDao<Persona>("Persona") {
     override fun generarTabla(): Boolean {
         return try {
             sqlConnector.generarTabla(
-                "CREATE TABLE Persona (" +
+                "CREATE TABLE $nombre (" +
                         "id INTEGER NOT NULL," +
                         "nombre VARCHAR(50) NOT NULL," +
                         "direccion VARCHAR(50)," +
@@ -24,7 +24,7 @@ object PersonaDAO: IDao<Persona>() {
         TODO("Not yet implemented")
     }
 
-    override fun listar(): List<Persona>? {
+    override fun listar(): List<Persona> {
         TODO("Not yet implemented")
     }
 

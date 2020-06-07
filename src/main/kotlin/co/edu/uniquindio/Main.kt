@@ -36,7 +36,9 @@ class Main : Application() {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            DAOMaster.generarTablas()
+            val result: Boolean = DAOMaster.generarTablas()
+            println(result)
+
             launch(Main::class.java)
         }
     }

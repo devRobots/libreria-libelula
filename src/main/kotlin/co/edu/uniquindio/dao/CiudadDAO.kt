@@ -2,12 +2,12 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Ciudad
 
-object CiudadDAO : IDao<Ciudad>() {
+object CiudadDAO : IDao<Ciudad>("Ciudad") {
     override fun generarTabla(): Boolean {
         PaisDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
-                "CREATE TABLE Ciudad (" +
+                "CREATE TABLE $nombre (" +
                         "id INTEGER NOT NULL AUTO_INCREMENT," +
                         "nombre VARCHAR(50) NOT NULL," +
                         "pais INTEGER NOT NULL," +
@@ -24,7 +24,7 @@ object CiudadDAO : IDao<Ciudad>() {
         TODO("Not yet implemented")
     }
 
-    override fun listar(): List<Ciudad>? {
+    override fun listar(): List<Ciudad> {
         TODO("Not yet implemented")
     }
 

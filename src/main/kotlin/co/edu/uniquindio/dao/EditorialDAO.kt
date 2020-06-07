@@ -2,12 +2,12 @@ package co.edu.uniquindio.dao
 
 import co.edu.uniquindio.modelo.Editorial
 
-object EditorialDAO: IDao<Editorial>() {
+object EditorialDAO: IDao<Editorial>("Editorial") {
     override fun generarTabla(): Boolean {
         CiudadDAO.generarTabla()
         return try {
             sqlConnector.generarTabla(
-                "CREATE TABLE Editorial (" +
+                "CREATE TABLE $nombre (" +
                         "id INTEGER NOT NULL AUTO_INCREMENT," +
                         "nombre VARCHAR(50) NOT NULL," +
                         "correo VARCHAR(50)," +
@@ -25,7 +25,7 @@ object EditorialDAO: IDao<Editorial>() {
         TODO("Not yet implemented")
     }
 
-    override fun listar(): List<Editorial>? {
+    override fun listar(): List<Editorial> {
         TODO("Not yet implemented")
     }
 

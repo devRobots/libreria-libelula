@@ -3,11 +3,11 @@ package co.edu.uniquindio.dao
 import co.edu.uniquindio.modelo.Pais
 import kotlin.collections.ArrayList
 
-object PaisDAO : IDao<Pais>() {
+object PaisDAO : IDao<Pais>("Pais") {
     override fun generarTabla(): Boolean {
         return try {
             sqlConnector.generarTabla(
-                "CREATE TABLE Pais (" +
+                "CREATE TABLE $nombre (" +
                         "id INTEGER NOT NULL AUTO_INCREMENT," +
                         "nombre VARCHAR(50) NOT NULL," +
                         "Constraint pk_pais Primary Key (id)" +
@@ -48,13 +48,7 @@ object PaisDAO : IDao<Pais>() {
     }
 
     override fun eliminar(id: Int): Boolean {
-        return try {
-            sqlConnector.eliminar(
-                "DELETE FROM Pais WHERE id = ?", arrayListOf(id)
-            )
-        } catch (ex: Exception) {
-            false
-        }
+        return eliminar("id", id)
     }
 
     override fun actualizar(nuevaEntidad: Pais): Boolean {
@@ -70,6 +64,6 @@ object PaisDAO : IDao<Pais>() {
             entidad.nombre
         )
 
-        return insertar("Pais", propiedades, parametros)
+        return insertar(propiedades, parametros)
     }
 }

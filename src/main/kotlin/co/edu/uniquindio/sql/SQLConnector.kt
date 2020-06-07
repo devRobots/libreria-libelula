@@ -4,7 +4,7 @@ import java.sql.*
 import java.util.*
 import kotlin.collections.HashMap
 
-class SQLConnector : ICrudSQL {
+object SQLConnector : ICrudSQL {
     private var conexion: Connection? = null
     private val props: Properties = Properties()
 
