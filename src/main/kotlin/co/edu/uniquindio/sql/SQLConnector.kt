@@ -172,7 +172,15 @@ object SQLConnector : ICrudSQL {
     }
 
     init {
-        props.setProperty("url", "jdbc:mysql://localhost:3306/libelula?autoReconnect=true&useSSL=false")
+        props.setProperty(
+            "url",
+            "jdbc:mysql://localhost:3306/libelula?" +
+                    "autoReconnect=true" +
+                    "&useSSL=false" +
+                    "&useJDBCCompliantTimezoneShift=true" +
+                    "&useLegacyDatetimeCode=false" +
+                    "&serverTimezone=UTC"
+        )
         props.setProperty("driver", "com.mysql.jdbc.Driver")
         props.setProperty("user", "root")
         props.setProperty("password", "root")

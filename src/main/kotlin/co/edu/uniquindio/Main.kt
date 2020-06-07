@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.stage.Stage
-import kotlin.system.exitProcess
 
 class Main : Application() {
 
@@ -36,9 +35,7 @@ class Main : Application() {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val result: Boolean = DAOMaster.generarTablas()
-            println(result)
-
+            DAOMaster.generarTablas()
             launch(Main::class.java)
         }
     }
